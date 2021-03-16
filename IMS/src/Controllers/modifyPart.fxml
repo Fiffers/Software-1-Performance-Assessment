@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="424.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyPartController">
+    <children>
+        <Label layoutX="54.0" layoutY="46.0" text="Modify Model.Part">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="inHouseButton" layoutX="158.0" layoutY="51.0" mnemonicParsing="false" onAction="#radioButtonManager" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="partsToggleGroup" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="outsourcedButton" layoutX="265.0" layoutY="51.0" mnemonicParsing="false" onAction="#radioButtonManager" text="Outsourced" toggleGroup="$partsToggleGroup" />
+        <VBox layoutX="83.0" layoutY="110.0" prefHeight="240.0" prefWidth="97.0" spacing="23.0">
+            <children>
+                <Label text="ID" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Name" />
+                <Label text="Inv" />
+                <Label text="Price/Cost" />
+                <Label text="Max" />
+                <Label fx:id="machineIDLabel" prefHeight="20.0" text="Machine ID" />
+            </children>
+        </VBox>
+        <VBox layoutX="187.0" layoutY="110.0" prefHeight="240.0" prefWidth="125.0" spacing="15.0">
+            <children>
+                <TextField fx:id="idTextField" disable="true" editable="false" maxHeight="0.0" prefHeight="20.0" promptText="Auto Gen- Disabled" />
+                <TextField fx:id="nameTextField" promptText="Brakes" />
+                <TextField fx:id="inventoryTextField" promptText="#" />
+                <TextField fx:id="priceTextField" promptText="#.#" />
+                <TextField fx:id="maxTextField" promptText="#" />
+                <TextField fx:id="machineIDField" promptText="#" />
+            </children>
+        </VBox>
+        <Label layoutX="342.0" layoutY="275.0" text="Min" />
+        <TextField fx:id="minTextField" layoutX="400.0" layoutY="271.0" prefWidth="125.0" promptText="#" />
+        <HBox layoutX="406.0" layoutY="371.0" prefHeight="26.0" prefWidth="113.0" spacing="20.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#saveButtonPushed" text="Save" />
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

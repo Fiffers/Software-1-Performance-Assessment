@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="570.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyProductController">
+    <children>
+        <Label layoutX="45.0" layoutY="26.0" text="Modify Product">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <VBox layoutX="93.0" layoutY="120.0" prefHeight="240.0" prefWidth="97.0" spacing="23.0">
+            <children>
+                <Label text="ID" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Name" />
+                <Label text="Inv" />
+                <Label text="Price/Cost" />
+                <Label text="Max" />
+            </children>
+        </VBox>
+        <VBox layoutX="197.0" layoutY="120.0" prefHeight="240.0" prefWidth="125.0" spacing="15.0">
+            <children>
+                <TextField fx:id="idTextField" disable="true" editable="false" maxHeight="0.0" prefHeight="20.0" promptText="Auto Gen- Disabled" />
+                <TextField fx:id="nameTextField" promptText="Brakes" />
+                <TextField fx:id="inventoryTextField" promptText="#" />
+                <TextField fx:id="priceTextField" promptText="#.#" />
+                <TextField fx:id="maxTextField" promptText="#" />
+            </children>
+        </VBox>
+        <Label layoutX="352.0" layoutY="285.0" text="Min" />
+        <TextField fx:id="minTextField" layoutX="410.0" layoutY="281.0" prefWidth="125.0" promptText="#" />
+        <Button fx:id="saveButton" layoutX="913.0" layoutY="534.0" mnemonicParsing="false" onAction="#saveButtonPushed" text="Save" />
+        <Button fx:id="cancelButton" layoutX="963.0" layoutY="534.0" mnemonicParsing="false" onAction="#backToMainForm" text="Cancel" />
+        <TableView fx:id="unassociatedPartsTableView" layoutX="567.0" layoutY="45.0" prefHeight="200.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="unassociatedPartIDTableColumn" prefWidth="75.0" text="Model.Part ID" />
+                <TableColumn fx:id="unassociatedPartNameTableColumn" prefWidth="125.0" text="Model.Part Name" />
+                <TableColumn fx:id="unassociatedInventoryLevelTableColumn" prefWidth="125.0" text="Inventory Level" />
+                <TableColumn fx:id="unassociatedPricePerUnitTableColumn" prefWidth="125.0" text="Price/Cost Per Unit" />
+            </columns>
+        </TableView>
+        <TableView fx:id="associatedPartsTableView" layoutX="567.0" layoutY="289.0" prefHeight="200.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="associatedPartIDTableColumn" prefWidth="75.0" text="Model.Part ID" />
+                <TableColumn fx:id="associatedPartNameTableColumn" prefWidth="125.0" text="Model.Part Name" />
+                <TableColumn fx:id="associatedInventoryLevelTableColumn" prefWidth="125.0" text="Inventory Level" />
+                <TableColumn fx:id="associatedPricePerUnitTableColumn" prefWidth="125.0" text="Price/Cost Per Unit" />
+            </columns>
+        </TableView>
+        <Button fx:id="addAssociatedPartButton" layoutX="893.0" layoutY="254.0" mnemonicParsing="false" onAction="#addAssociatedPartButtonPushed" text="Add Associated Model.Part" />
+        <Button fx:id="removeAssociatedPartButton" layoutX="872.0" layoutY="499.0" mnemonicParsing="false" onAction="#removeAssociatedPartButtonPushed" text="Remove Associated Model.Part" />
+        <TextField fx:id="searchUnassociatedPartsTextField" layoutX="568.0" layoutY="10.0" onAction="#searchButtonPushed" prefHeight="25.0" prefWidth="332.0" promptText="Search by Model.Part ID or Name" />
+        <Button fx:id="clearSearchButton" layoutX="973.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearSearchButtonPushed" text="Clear" />
+        <Button fx:id="searchUnassociatedPartsButton" layoutX="910.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchButtonPushed" text="Search" />
+    </children>
+</AnchorPane>
